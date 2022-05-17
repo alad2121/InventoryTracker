@@ -1,0 +1,55 @@
+﻿@model InventoryTracker.Models.ViewModels.ProductVM
+
+
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<form method="post">
+    <input asp-for="Product.Id" hidden />
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Create Product</h2>
+            <hr />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Product.Name">Name</label>
+            <input asp-for="Product.Name" class="form-control" />
+
+        </div>
+
+
+        <div class="mb-3">
+            <label asp-for="Product.Price">Price</label>
+            <input asp-for="Product.Price" class="form-control" />
+
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Product.LocationId">Warehouse</label>
+            <select asp-for="Product.LocationId" asp-items="@Model.LocationList" class="form-select">
+                <option disabled selected>--Select Warehouse--</option>
+            </select>
+        </div>
+
+        <div>
+            <label asp-for="Product.CategoryId">Category</label>
+            <select asp-for="Product.CategoryId" asp-items="@Model.CategoryList" class="form-select">
+                <option disabled selected>--Select Category--</option>
+            </select>
+        </div>
+        <div>
+            <label asp-for="Product.Quantity">Quantity</label>
+            <input type="number" asp-for="Product.Quantity" min="0"/>
+        </div>
+
+
+
+        <br />
+        <button type="submit" class="btn btn-primary" style="width:150px">Create</button>
+        <a asp-controller="Product" asp-action="Index" class="btn btn-secondary" style="width:150px">
+            Back to List
+        </a>
+    </div>
+</form>

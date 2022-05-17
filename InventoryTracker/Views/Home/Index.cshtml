@@ -1,0 +1,32 @@
+﻿@model IEnumerable<ProductModel>;
+
+@{
+    ViewData["Title"] = "Home Page";
+}                       
+
+<div class="container p-3">
+    <table class="table table-bordered table-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</zz>
+                <th>Category</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var obj in Model)
+            {
+                        <tr>
+                            <td width="20%">@obj.Id</td>
+                            <td width="20%">@obj.Name</td>
+                            <td width="20%">$@obj.Price</td>
+                            <td width="20%">@obj.selectedCategory</td>
+                            <td width="20%">@obj.selectedLocation</td>
+                        </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,40 @@
+﻿@model LocationModel
+
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<form method="post">
+    <input hidden asp-for="Id" />
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Delete Location</h2>
+            <hr />
+            <div class="mb-3">
+                <label>State</label>
+                <input asp-for="State" class="form-control" />
+            </div>
+          <div class="mb-3">
+                <label asp-for="City">City</label>
+                <input asp-for="City" class="form-control" />
+            </div>
+
+              
+            <div class="mb-3">
+                <label asp-for="Country">Country</label>
+                <input asp-for="Country" class="form-control" />
+            </div>
+            
+            <div class="mb-3">
+                <label asp-for="WarehouseName">Warehouse Name</label>
+                <input asp-for="WarehouseName" class="form-control" />
+            </div>
+
+            <br />
+            <button type="submit" class="btn btn-primary" style="width:150px">Edit</button>
+            <a asp-controller="Location" asp-action="Index" class="btn btn-secondary" style="width:150px">
+                Back to List
+            </a>
+        </div>
+</form>
